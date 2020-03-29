@@ -12,7 +12,7 @@ import Header from "./header"
 import "./layout.css"
 
 interface props {
-  children ?: any
+  children?: any
 }
 
 const Layout = ({ children }: props) => {
