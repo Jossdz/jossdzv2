@@ -1,8 +1,9 @@
 import * as React from "react"
-import { createGlobalStyle, ThemeProvider } from "styled-components"
+import { createGlobalStyle, ThemeProvider, css } from "styled-components"
 import { useMapState } from "../hooks/state"
 import { MyGlobalProps } from "../@types"
-import typography from "../utils/typography"
+
+export const yellow = "#FACC48"
 
 const GlobalStyles = createGlobalStyle<MyGlobalProps>`
 html, body, #___gatsby, #___gatsby > div {
@@ -10,6 +11,7 @@ html, body, #___gatsby, #___gatsby > div {
   height:100%;
 }
 body {
+  position: relative;
   background-color: ${props =>
     props.theme.mode === `LIGHT` ? `#FFF` : `#000`};
   }

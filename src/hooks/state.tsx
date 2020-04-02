@@ -3,6 +3,7 @@ import { MapActions, MapState } from "../@types"
 
 const initialState: MapState = {
   theme: "LIGHT",
+  showingMenu: false,
 }
 
 const initialMapContext: {
@@ -18,7 +19,13 @@ export const MapContext = createContext(initialMapContext)
 const reducer = (state: MapState, action: MapActions) => {
   switch (action.type) {
     case "TOGGLETHEME":
-      return state.theme === "LIGHT" ? { theme: "DARK" } : { theme: "LIGHT" }
+      return state.theme === "LIGHT"
+        ? { ...state, theme: "DARK" }
+        : { ...state, theme: "LIGHT" }
+    case "TOGGLEMENU":
+      return state.showingMenu
+        ? { ...state, showingMenu: false }
+        : { ...state, showingMenu: true }
     default:
       return state
   }

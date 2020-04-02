@@ -1,6 +1,5 @@
 import styled from "styled-components"
-
-const yellow = "#FACC48"
+import { yellow } from "./Theme"
 
 export const HeroStyled = styled.main`
   @keyframes animatedBackground {
