@@ -29,7 +29,7 @@ const SideMenuButton = styled.div<{ active: boolean }>`
     content: " ";
     width: 50px;
     height: 3px;
-    background-color: ${props => (props.active ? "black" : yellow)};
+    background-color: ${yellow};
     position: absolute;
     margin: 10px 0 0 0;
     transform: ${props => (props.active ? "rotate(45deg)" : "none")};
@@ -39,11 +39,14 @@ const SideMenuButton = styled.div<{ active: boolean }>`
     content: " ";
     width: 50px;
     height: 3px;
-    background-color: ${props => (props.active ? "black" : yellow)};
+    background-color: ${yellow};
     position: absolute;
     margin: ${props => (props.active ? "10px" : "-5px")} 0 0 0;
     transform: ${props => (props.active ? "rotate(-45deg)" : "none")};
     transition: all 0.6s ease;
+  }
+  @media screen and (min-width: 769px) {
+    display: none;
   }
 `
 export default SideMenuButton

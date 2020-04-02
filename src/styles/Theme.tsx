@@ -16,8 +16,7 @@ body {
     props.theme.mode === `LIGHT` ? `#FFF` : `#000`};
   }
   p, h1, h2, h3, h4{
-    color: ${props =>
-      props.theme.mode === `LIGHT` ? `#000` : `white`} !important;
+    color: ${props => (props.theme.mode === `LIGHT` ? `#000` : `white`)};
   }
   h1,h2,h3,h4,h5{
     letter-spacing: 1px;

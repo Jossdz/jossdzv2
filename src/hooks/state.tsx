@@ -2,7 +2,7 @@ import React, { createContext, useReducer, useContext } from "react"
 import { MapActions, MapState } from "../@types"
 
 const initialState: MapState = {
-  theme: "LIGHT",
+  theme: "DARK",
   showingMenu: false,
 }
 

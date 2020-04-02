@@ -1,11 +1,11 @@
 export interface MapState {
   /** The map feature reference */
-  theme: any | null | "LIGHT" | "DARK"
+  theme: any | null | "LIGHT" | "DARK" | ""
   showingMenu: any | true | false
 }
 
 export interface MapActions {
-  type: "TOGGLETHEME" | "TOGGLEMENU"
+  type: "TOGGLETHEME" | "TOGGLEMENU" | ""
 }
 
 export interface MyGlobalProps {

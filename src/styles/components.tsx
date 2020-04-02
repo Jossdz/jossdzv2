@@ -29,7 +29,7 @@ export const HeroStyled = styled.main`
   h1 {
     margin: 0;
     border-bottom: 1px solid ${yellow};
-    width: 250px;
+    width: 50%;
     font-size: 2.5rem;
     padding-bottom: 5px;
   }
