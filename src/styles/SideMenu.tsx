@@ -6,7 +6,7 @@ const SideMenu = styled.div<{ active: boolean }>`
   height: 100vh;
   background-color: ${props =>
     props.theme.mode === "DARK" ? "black" : "white"};
-  position: absolute;
+  position: fixed;
   transform: ${props =>
     props.active ? "translateX(0%)" : "translateX(-100%)"};
   transition: all 0.4s ease-out;
@@ -15,6 +15,7 @@ const SideMenu = styled.div<{ active: boolean }>`
   place-items: center;
   place-content: center;
   height: 100%;
+  z-index: 3;
   nav {
     display: flex;
     width: 100%;
