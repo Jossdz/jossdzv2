@@ -74,7 +74,7 @@ function LandingInfo() {
         </article>
       </History>
       <hr />
-      <h2>Stack</h2>
+      <h2>Tecnologias</h2>
       <StackTech>
         {shuffle(stack).map(tech => (
           <Image name={tech} />
