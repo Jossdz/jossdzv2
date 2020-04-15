@@ -8,6 +8,7 @@ const FooterStyled = styled.footer`
   color: black;
   h2 {
     color: black;
+    font-size: 2.4rem;
   }
   nav {
     display: flex;

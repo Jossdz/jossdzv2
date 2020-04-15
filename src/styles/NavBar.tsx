@@ -31,6 +31,7 @@ const Navbar = styled.nav`
   }
   svg {
     margin-right: 3vw;
+    cursor: pointer;
   }
 `
 

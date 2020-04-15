@@ -40,9 +40,11 @@ const SideMenu = styled.div<{ active: boolean }>`
 
   & svg:nth-child(1) {
     color: ${props => (props.theme.mode === "DARK" ? "white" : yellow)};
+    cursor: pointer;
   }
   & svg:nth-child(2) {
     color: ${props => (props.theme.mode === "LIGHT" ? "black" : yellow)};
+    cursor: pointer;
   }
 `
 export default SideMenu

@@ -19,6 +19,7 @@ const InfoStyled = styled.div`
     color: ${yellow};
     background-color: ${yellow};
     position: relative;
+    margin-bottom: 6rem;
   }
   hr::after {
     content: " ";
