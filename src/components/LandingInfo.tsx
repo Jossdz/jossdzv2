@@ -1,4 +1,5 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import InfoStyled from "../styles/InfoStyled"
 import History from "../styles/History"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -14,22 +15,25 @@ function shuffle(a: string[]) {
   return a
 }
 
-const stack = [
-  "react.png",
-  "apollo.png",
-  "xd.png",
-  "npm.png",
-  "gatsby.png",
-  "mongo.png",
-  "zeit.png",
-  "prisma.png",
-  "graphql.png",
-  "js.png",
-  "ts.png",
-  "redux.png",
-]
-
 function LandingInfo() {
+  const {
+    allSanityCategory: { edges },
+  } = useStaticQuery(graphql`
+    {
+      allSanityCategory {
+        edges {
+          node {
+            image {
+              asset {
+                originalFilename
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <InfoStyled>
       <FontAwesomeIcon icon={faGem} size="lg" />
@@ -76,9 +80,20 @@ function LandingInfo() {
       <hr />
       <h2>Tecnologias</h2>
       <StackTech>
-        {shuffle(stack).map(tech => (
-          <Image name={tech} />
-        ))}
+        {shuffle(edges).map(
+          (
+            {
+              node: {
+                image: {
+                  asset: { originalFilename },
+                },
+              },
+            },
+            i
+          ) => (
+            <Image name={originalFilename} key={i} />
+          )
+        )}
       </StackTech>
       <hr />
     </InfoStyled>

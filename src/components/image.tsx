@@ -19,28 +19,45 @@ const Image = ({ name }: ImageProps) => {
     <StaticQuery
       query={graphql`
         query {
-          allImageSharp {
+          allSanityCategory {
             edges {
               node {
-                fluid(maxWidth: 500) {
-                  ...GatsbyImageSharpFluid
-                  originalName
+                image {
+                  asset {
+                    fluid {
+                      ...GatsbySanityImageFluid
+                    }
+                    originalFilename
+                  }
                 }
               }
             }
           }
         }
       `}
-      render={data => {
-        const image = data.allImageSharp.edges.find((edge: Node) => {
-          return edge.node.fluid.originalName === name
-        })
+      render={({ allSanityCategory: { edges } }) => {
+        const {
+          node: {
+            image: {
+              asset: { fluid },
+            },
+          },
+        } = edges.find(
+          ({
+            node: {
+              image: {
+                asset: { originalFilename },
+              },
+            },
+          }) => originalFilename === name
+        )
+        // debugger
 
-        if (!image) {
+        if (!fluid) {
           return null
         }
 
-        return <Img fluid={image.node.fluid} />
+        return <Img fluid={fluid} />
       }}
     />
   )

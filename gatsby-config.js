@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env`,
+})
+
 module.exports = {
   siteMetadata: {
     title: ``,
@@ -33,6 +37,21 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    {
+      resolve: "gatsby-source-sanity",
+      options: {
+        projectId: "wmkaj1hi",
+        dataset: "production",
+
+        // a token with read permissions is required
+        // if you have a private dataset
+        token: process.env.SANITY_TOKEN,
+
+        // If the Sanity GraphQL API was deployed using `--tag <name>`,
+        // use `graphqlTag` to specify the tag name. Defaults to `default`.
+        graphqlTag: "default",
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
