@@ -13,21 +13,28 @@ const HistoryS = styled.section`
     width: 80vw;
     max-height: 250px;
     max-width: 500px;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-beteen;
+    height: 250px;
     h3 {
       color: ${yellow};
       font-size: 1.7rem;
       text-align: center;
+      height: 20%;
+      margin: 0;
     }
     p {
       padding: 10px;
       font-size: 0.9rem;
       margin: 0;
+      height: 70%;
     }
     small {
       color: gray;
       padding: 0 10px;
       font-size: 0.9rem;
+      height: 10%;
     }
   }
 `

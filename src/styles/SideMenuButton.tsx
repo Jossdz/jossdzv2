@@ -19,15 +19,15 @@ import { yellow } from "./Theme"
 // }
 
 const SideMenuButton = styled.div<{ active: boolean }>`
-  width: 50px;
-  height: 50px;
+  width: 25px;
+  height: 25px;
   background-color: transparent;
   position: fixed;
-  margin: 35px 0 0 15px;
+  margin: 25px 0 0 15px;
   z-index: 10;
   &::before {
     content: " ";
-    width: 50px;
+    width: 25px;
     height: 3px;
     background-color: ${yellow};
     position: absolute;
@@ -37,7 +37,7 @@ const SideMenuButton = styled.div<{ active: boolean }>`
   }
   &::after {
     content: " ";
-    width: 50px;
+    width: 25px;
     height: 3px;
     background-color: ${yellow};
     position: absolute;

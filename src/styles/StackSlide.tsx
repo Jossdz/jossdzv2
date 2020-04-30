@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-const StackTech = styled.div`
+const StackSlide = styled.div`
   height: 200px;
   display: flex;
   align-items: center;
@@ -25,4 +25,4 @@ const StackTech = styled.div`
   }
 `
 
-export default StackTech
+export default StackSlide

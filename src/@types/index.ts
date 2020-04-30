@@ -13,3 +13,15 @@ export interface MyGlobalProps {
     mode: "LIGHT" | "DARK"
   }
 }
+
+export interface SanityHistory {
+  title: {
+    en?: string
+    es?: string
+  }
+  description: {
+    en?: string
+    es?: string
+  }
+  datenplace: string
+}

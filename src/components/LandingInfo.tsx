@@ -1,13 +1,23 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import InfoStyled from "../styles/InfoStyled"
-import History from "../styles/History"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faGem } from "@fortawesome/free-solid-svg-icons"
-import StackTech from "../styles/StackSlide"
 import Image from "./image"
+import History from "../styles/History"
+import StackSlide from "../styles/StackSlide"
+import InfoStyled from "../styles/InfoStyled"
+import { useStaticQuery, graphql } from "gatsby"
+import BlockContentRender from "./BlockContentRender"
+import { faGem } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { SanityHistory } from "../@types"
 
-function shuffle(a: string[]) {
+interface Image {
+  node: {
+    image: {
+      asset: { originalFilename: string }
+    }
+  }
+}
+
+function shuffle(a: Image[]) {
   for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1))
     ;[a[i], a[j]] = [a[j], a[i]]
@@ -18,6 +28,8 @@ function shuffle(a: string[]) {
 function LandingInfo() {
   const {
     allSanityCategory: { edges },
+    allSanityHistory,
+    sanityAuthor: { _rawBio: bio },
   } = useStaticQuery(graphql`
     {
       allSanityCategory {
@@ -31,55 +43,46 @@ function LandingInfo() {
           }
         }
       }
+      allSanityHistory {
+        nodes {
+          title {
+            es
+            en
+          }
+          datenplace
+          description {
+            en
+            es
+          }
+        }
+      }
+      sanityAuthor {
+        _rawBio
+      }
     }
   `)
-
   return (
     <InfoStyled>
       <FontAwesomeIcon icon={faGem} size="lg" />
-      <p>
-        Mi nombre es Jose Carlos, pero todos en la industria tech me conocen
-        como 'Joss'. Soy un desarrollador fullstack, he estado durante muchos
-        años involucrado en comunidades de desarrollo web y tecnologías de la
-        información. Me encanta aprender, enseñar y colaborar con personas en el
-        entorno. Actualmente trabajo en Ironhack como maestro asistente para
-        aportar a la educación en tecnología y a su vez escribo y preparo
-        contenido para complementar mi misión de compartir conocimiento online y
-        en pláticas de comunidades.
-      </p>
+      <BlockContentRender data={bio} />
       <h2>Historia</h2>
       <History>
-        <article>
-          <h3>Titulo</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum ipsam
-            dolorem sed nam hic ab sunt dicta doloremque, in possimus, dolor
-            ullam? Distinctio error at enim, cum suscipit saepe labore?
-          </p>
-          <small>fecha</small>
-        </article>
-        <article>
-          <h3>Titulo</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum ipsam
-            dolorem sed nam hic ab sunt dicta doloremque, in possimus, dolor
-            ullam? Distinctio error at enim, cum suscipit saepe labore?
-          </p>
-          <small>fecha</small>
-        </article>
-        <article>
-          <h3>Titulo</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum ipsam
-            dolorem sed nam hic ab sunt dicta doloremque, in possimus, dolor
-            ullam? Distinctio error at enim, cum suscipit saepe labore?
-          </p>
-          <small>fecha</small>
-        </article>
+        {allSanityHistory.nodes.map(
+          (
+            { title, datenplace, description }: SanityHistory,
+            index: number
+          ) => (
+            <article key={index}>
+              <h3>{title.es}</h3>
+              <p>{description.es}</p>
+              <small>{datenplace}</small>
+            </article>
+          )
+        )}
       </History>
       <hr />
       <h2>Tecnologias</h2>
-      <StackTech>
+      <StackSlide>
         {shuffle(edges).map(
           (
             {
@@ -88,13 +91,13 @@ function LandingInfo() {
                   asset: { originalFilename },
                 },
               },
-            },
+            }: Image,
             i
           ) => (
             <Image name={originalFilename} key={i} />
           )
         )}
-      </StackTech>
+      </StackSlide>
       <hr />
     </InfoStyled>
   )
