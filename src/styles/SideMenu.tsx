@@ -14,7 +14,7 @@ const SideMenu = styled.div<{ active: boolean }>`
   flex-direction: column;
   place-items: center;
   place-content: center;
-  height: 100%;
+  height: 100vh;
   z-index: 3;
   nav {
     display: flex;

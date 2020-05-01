@@ -17,7 +17,6 @@ const IndexPage = () => {
       />
       <Hero />
       <LandingInfo />
-      <Footer />
     </>
   )
 }

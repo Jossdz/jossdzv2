@@ -18,7 +18,7 @@ export const HeroStyled = styled.main`
   align-items: center;
   text-align: center;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: ${props =>
     props.theme.mode === `LIGHT` ? `#FFF` : `#000`};
   background-image: ${props =>

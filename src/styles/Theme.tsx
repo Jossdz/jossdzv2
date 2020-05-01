@@ -1,17 +1,23 @@
 import * as React from "react"
-import { createGlobalStyle, ThemeProvider, css } from "styled-components"
+import { createGlobalStyle, ThemeProvider } from "styled-components"
 import { useMapState } from "../hooks/state"
 import { MyGlobalProps } from "../@types"
 
 export const yellow = "#FACC48"
 
 const GlobalStyles = createGlobalStyle<MyGlobalProps>`
-html, body, #___gatsby, #___gatsby > div {
+:root{
+  --yellow: #FACC48;
+  --soft-dark: #131313;
+  --soft-white: #FBFBFB;
+}
+html,  #___gatsby, #___gatsby> div  {
   width: 100%;
   height:100%;
 }
 body {
   position: relative;
+  min-height: 100%;
   background-color: ${props =>
     props.theme.mode === `LIGHT` ? `#FFF` : `#000`};
   }
@@ -21,6 +27,11 @@ body {
   h1,h2,h3,h4,h5{
     letter-spacing: 1px;
   }
+  #___gatsby{
+    min-height: 100vh;
+    position: relative;
+  }
+
 `
 
 const Theme: React.FunctionComponent = ({ children }) => {

@@ -1,11 +1,16 @@
 import styled from "styled-components"
 
-import { yellow } from "./Theme"
-
 const FooterStyled = styled.footer`
   padding: 3vh 10vw;
-  background-color: ${yellow};
+  background-color: var(--yellow);
   color: black;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
   h2 {
     color: black;
     font-size: 2.4rem;
@@ -27,5 +32,4 @@ const FooterStyled = styled.footer`
       transform: scale(1.1);
   }
 `
-
 export default FooterStyled

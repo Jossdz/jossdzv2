@@ -6,6 +6,7 @@ import { useMapState } from "../hooks/state"
 import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons"
+import Footer from "./Footer"
 
 interface props {
   children?: any
@@ -78,6 +79,7 @@ const Layout = ({ children }: props) => {
         />
       </Navbar>
       {children}
+      <Footer />
     </>
   )
 }

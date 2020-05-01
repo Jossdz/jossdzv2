@@ -18,7 +18,7 @@ import { yellow } from "./Theme"
 //   margin: -10px 0 0 0;
 // }
 
-const SideMenuButton = styled.div<{ active: boolean }>`
+const SideMenuButton = styled.i<{ active: boolean }>`
   width: 25px;
   height: 25px;
   background-color: transparent;
