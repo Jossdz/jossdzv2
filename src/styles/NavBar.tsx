@@ -10,6 +10,17 @@ const Navbar = styled.nav`
   h2 {
     margin: 0;
     color: black;
+    font-size: 1rem;
+    font-family: "Source Sans Pro";
+    a {
+      color: black;
+    }
+    a::visited {
+      color: black;
+    }
+  }
+  & > h2 {
+    font-family: "Six Caps";
   }
   @media screen and (min-width: 900px) {
     display: flex;

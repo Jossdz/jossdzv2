@@ -19,7 +19,7 @@ body {
   position: relative;
   min-height: 100%;
   background-color: ${props =>
-    props.theme.mode === `LIGHT` ? `#FFF` : `#000`};
+    props.theme.mode === `LIGHT` ? `var(--soft-white)` : `var(--soft-dark)`};
   }
   p, h1, h2, h3, h4{
     color: ${props => (props.theme.mode === `LIGHT` ? `#000` : `white`)};

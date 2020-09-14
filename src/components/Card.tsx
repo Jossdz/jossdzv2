@@ -56,10 +56,9 @@ const CardStyles = styled.article`
     height: 100%;
     width: 100%;
     border: none;
-    background-color: ${props =>
-      props.theme.mode === `LIGHT` ? "black" : "white"};
+    background-color: var(--yellow);
     font-weight: bold;
-    color: ${props => (props.theme.mode === `LIGHT` ? "white" : "black")};
+    color: black;
     cursor: pointer;
   }
 

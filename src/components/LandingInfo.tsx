@@ -65,21 +65,6 @@ function LandingInfo() {
     <InfoStyled>
       <FontAwesomeIcon icon={faGem} size="lg" />
       <BlockContentRender data={bio} />
-      <h2>Historia</h2>
-      <History>
-        {allSanityHistory.nodes.map(
-          (
-            { title, datenplace, description }: SanityHistory,
-            index: number
-          ) => (
-            <article key={index}>
-              <h3>{title.es}</h3>
-              <p>{description.es}</p>
-              <small>{datenplace}</small>
-            </article>
-          )
-        )}
-      </History>
       <hr />
       <h2>Tecnologias</h2>
       <StackSlide>
