@@ -4,7 +4,7 @@ import styled from "styled-components"
 const CardStyles = styled.article`
   display: flex;
   flex-direction: column;
-  font-family: "Source Sans Pro";
+  font-family: sans-serif, sans-serif, "Open Sans";
   background-color: ${props =>
     props.theme.mode === `LIGHT` ? "var(--soft-white);" : "var(--soft-dark);"};
   height: 230px;
@@ -13,7 +13,7 @@ const CardStyles = styled.article`
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   h2 {
-    font-family: "Source Sans Pro";
+    font-family: sans-serif, "Open Sans";
     background-color: var(--yellow);
     text-align: center;
     font-weight: 100;
@@ -34,7 +34,7 @@ const CardStyles = styled.article`
   }
   div > small {
     color: ${props => (props.theme.mode === `LIGHT` ? "white" : "black")};
-    font-family: "Source Sans Pro";
+    font-family: sans-serif, "Open Sans";
     font-weight: 500;
     font-size: 0.9rem;
     display: flex;

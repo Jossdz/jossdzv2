@@ -40,10 +40,8 @@ const Theme: React.FunctionComponent = ({ children }) => {
   } = useMapState()
   return (
     <ThemeProvider theme={{ mode: theme }}>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Six+Caps&family=Source+Sans+Pro&display=swap"
-        rel="stylesheet"
-      />
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Six+Caps&display=swap" rel="stylesheet"/>
+
       <GlobalStyles />
       {children}
     </ThemeProvider>

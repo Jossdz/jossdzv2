@@ -5,6 +5,6 @@ const typography = new Typography({
   headerFontFamily: [
     "six caps"
   ],
-  bodyFontFamily: ["Source Sans Pro", "serif"],
+  bodyFontFamily: [sans-serif, "Open Sans", "serif"],
 })
 export default typography
