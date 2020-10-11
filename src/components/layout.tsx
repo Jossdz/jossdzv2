@@ -20,7 +20,7 @@ const Layout = ({ children }: props) => {
   const [showIcons, setShowIcons] = useState(false)
 
   setTimeout(() => setShowIcons(true), 200)
-  return (
+  return showIcons && (
     <>
       <SideButton
         active={showingMenu}
@@ -41,7 +41,7 @@ const Layout = ({ children }: props) => {
         </Link>
 
         <nav>
-          {showIcons && <><FontAwesomeIcon
+          <FontAwesomeIcon
             icon={faSun}
             onClick={() =>
               theme === "DARK"
@@ -56,7 +56,7 @@ const Layout = ({ children }: props) => {
                 ? setMapState({ type: "TOGGLETHEME" })
                 : setMapState({ type: "" })
             }
-          /></>}
+          />
           {/* TODO: lang selection */}
         </nav>
       </SideMenu>
