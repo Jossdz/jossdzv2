@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import SideButton from "../styles/SideMenuButton"
 import SideMenu from "../styles/SideMenu"
 import Navbar from "../styles/NavBar"
@@ -17,6 +17,9 @@ const Layout = ({ children }: props) => {
     setMapState,
     mapState: { showingMenu, theme },
   } = useMapState()
+  const [showIcons, setShowIcons] = useState(false)
+
+  setTimeout(() => setShowIcons(true), 200)
   return (
     <>
       <SideButton
@@ -38,7 +41,7 @@ const Layout = ({ children }: props) => {
         </Link>
 
         <nav>
-          <FontAwesomeIcon
+          {showIcons && <><FontAwesomeIcon
             icon={faSun}
             onClick={() =>
               theme === "DARK"
@@ -53,7 +56,7 @@ const Layout = ({ children }: props) => {
                 ? setMapState({ type: "TOGGLETHEME" })
                 : setMapState({ type: "" })
             }
-          />
+          /></>}
           {/* TODO: lang selection */}
         </nav>
       </SideMenu>
@@ -73,10 +76,10 @@ const Layout = ({ children }: props) => {
         <Link to="/talks">
           <h2>PRESENTACIONES</h2>
         </Link>
-        <FontAwesomeIcon
+        {showIcons && <FontAwesomeIcon
           icon={theme === "DARK" ? faSun : faMoon}
           onClick={() => setMapState({ type: "TOGGLETHEME" })}
-        />
+        />}
       </Navbar>
       {children}
       <Footer />
