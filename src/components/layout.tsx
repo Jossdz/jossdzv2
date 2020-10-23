@@ -30,9 +30,9 @@ const Layout = ({ children }: props) => {
         <Link to="/">
           <h2>INICIO</h2>
         </Link>
-        {/* <Link to="/blog">
-          <h2>BLOG</h2>
-        </Link> */}
+        <Link to="/projects">
+          <h2>PROYECTOS</h2>
+        </Link>
         {/* <Link to="/tutorials">
           <h2>TUTORIALES</h2>
         </Link> */}
@@ -62,10 +62,15 @@ const Layout = ({ children }: props) => {
       </SideMenu>
       <Navbar>
         <h2>
-          <a href="/">JOSSDZ</a>
+          <Link to="/">
+            JOSSDZ
+          </Link>
         </h2>
         <Link to="/">
           <h2>INICIO</h2>
+        </Link>
+        <Link to="/projects">
+          <h2>PROYECTOS</h2>
         </Link>
         {/* <Link to="/blog">
           <h2>BLOG</h2>

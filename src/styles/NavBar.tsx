@@ -11,7 +11,7 @@ const Navbar = styled.nav`
     margin: 0;
     color: black;
     font-size: 1rem;
-    font-family: sans-serif, "Open Sans";
+    font-family: "Open sans", sans-serif;
     a {
       color: black;
     }
@@ -20,7 +20,7 @@ const Navbar = styled.nav`
     }
   }
   & > h2 {
-    font-family: sans-serif, "Six Caps";
+    font-family: "Six Caps", sans-serif;
   }
   @media screen and (min-width: 900px) {
     display: flex;

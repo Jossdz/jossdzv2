@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
 import Card from "../components/Card"
+
 export const query = graphql`
   query getAllTalks {
     allSanityTalk {
@@ -26,7 +27,7 @@ export const query = graphql`
   }
 `
 
-const Title = styled.h1`
+export const Title = styled.h1`
   text-align: center;
   font-size: 3.5rem;
   padding-top: 10vh;

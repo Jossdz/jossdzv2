@@ -4,7 +4,7 @@ const FooterStyled = styled.footer`
   padding: 3vh 10vw;
   background-color: var(--yellow);
   color: black;
-  position: absolute;
+  position: relative;
   bottom: 0;
   right: 0;
   bottom: 0;
