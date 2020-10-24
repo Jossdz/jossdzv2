@@ -13,6 +13,7 @@ import localeString from "./localeString"
 import localeBlockContent from "./localeBlockContent"
 import talk from "./talk"
 import place from "./place"
+import project from "./project"
 import history from "./history"
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -35,5 +36,6 @@ export default createSchema({
     talk,
     place,
     history,
+    project
   ]),
 })

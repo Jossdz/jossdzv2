@@ -31,7 +31,11 @@ body {
     min-height: 100vh;
     position: relative;
   }
-
+li{
+  color: ${props =>
+    props.theme.mode === `LIGHT` ? `black` : `white`};
+  }
+}
 `
 
 const Theme: React.FunctionComponent = ({ children }) => {

@@ -14,21 +14,24 @@ interface ProjectProps {
 
 
 const ProjectsList = styled.ul`
-min-height: calc(100vh - 370px);
+  min-height: calc(100vh - 370px);
   list-style: none;
   box-sizing: content-box;
   color:  ${props => (props.theme.mode === "DARK" ? "white" : 'black')};
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
   margin: 0;
   li{
     box-sizing: content-box;
     font-size: 1.8rem;
     transition: all 0.3s ease;
+    height: auto;
     a{
       text-decoration: none;
       color: inherit;
-    border-bottom: 1px solid ${yellow};
+      border-bottom: 1px solid ${yellow};
     }
   }
   li:hover{
@@ -46,11 +49,13 @@ function projects({ data }: ProjectProps) {
     <div>
       <Title>Projects</Title>
       <ProjectsList>
-        {data.allSanityProject.edges.map(({ node: { name, id, slug } }, i) => <li key={id}>
-          <Link to={`/project/${slug.current}`}>
-            {name.en}
-          </Link>
-        </li>
+        {data.allSanityProject.edges.map(({ node: { name, id, slug } }, i) => (
+          <li key={id}>
+            <Link to={`/project/${slug.current}`}>
+              {name.en}
+            </Link>
+          </li>
+        )
         )}
       </ProjectsList>
     </div>
