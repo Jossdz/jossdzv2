@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { yellow } from "./Theme"
 
 const InfoStyled = styled.div`
-  padding: 6vh 10vw 20vh;
+  padding: 6vh 10vw 100px;
   p {
     text-align: justify;
   }

@@ -1,7 +1,8 @@
-import React from "react"
+import React, { useEffect } from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
 import Card from "../components/Card"
+import { useMapState } from '../hooks/state'
 
 export const query = graphql`
   query getAllTalks {
@@ -37,7 +38,7 @@ const TalksStyle = styled.main`
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  padding-bottom: 300px;
+  padding: 0 5.5vw 100px 5.5vw;
 `
 
 const CardsGrid = styled.section`
@@ -74,11 +75,13 @@ interface Props {
 }
 
 function talks({ data }: Props) {
-  console.log(data.allSanityTalk.edges)
+  const { setMapState, mapState: { showingMenu } } = useMapState()
+
+  useEffect(() => { if (showingMenu) setMapState({ type: 'CLOSEMENU' }) }, [])
+
   return (
     <TalksStyle>
-      <Title>Presentaciones</Title>
-
+      <Title>Talks</Title>
       <CardsGrid>
         {data.allSanityTalk.edges.map(({ node: talk }: Node, i: number) => (
           <Card key={i} {...talk} />

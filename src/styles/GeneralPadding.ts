@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export default styled.div`
-  padding: 0.6rem 0.5rem;
+  padding: 0.6rem 10vw;
   text-align: justify;
   @media (min-width: 700px){
   padding: 0.6rem 3rem;

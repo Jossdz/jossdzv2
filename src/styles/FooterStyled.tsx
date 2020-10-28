@@ -24,7 +24,7 @@ const FooterStyled = styled.footer`
       color: black;
       text-decoration: none;
       text-align: center;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       transition: all 0.6s ease;
     }
     a:hover {

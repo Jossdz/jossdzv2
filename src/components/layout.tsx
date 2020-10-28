@@ -28,16 +28,16 @@ const Layout = ({ children }: props) => {
       />
       <SideMenu active={showingMenu}>
         <Link to="/">
-          <h2>INICIO</h2>
+          <h2>HOME</h2>
         </Link>
         <Link to="/projects">
-          <h2>PROYECTOS</h2>
+          <h2>PROJECTS</h2>
         </Link>
         {/* <Link to="/tutorials">
           <h2>TUTORIALES</h2>
         </Link> */}
         <Link to="/talks">
-          <h2>PRESENTACIONES</h2>
+          <h2>TALKS</h2>
         </Link>
 
         <nav>
@@ -67,10 +67,10 @@ const Layout = ({ children }: props) => {
           </Link>
         </h2>
         <Link to="/">
-          <h2>INICIO</h2>
+          <h2>HOME</h2>
         </Link>
         <Link to="/projects">
-          <h2>PROYECTOS</h2>
+          <h2>PROJECTS</h2>
         </Link>
         {/* <Link to="/blog">
           <h2>BLOG</h2>
@@ -79,7 +79,7 @@ const Layout = ({ children }: props) => {
           <h2>TUTORIALES</h2>
         </Link> */}
         <Link to="/talks">
-          <h2>PRESENTACIONES</h2>
+          <h2>TALKS</h2>
         </Link>
         {showIcons && <FontAwesomeIcon
           icon={theme === "DARK" ? faSun : faMoon}

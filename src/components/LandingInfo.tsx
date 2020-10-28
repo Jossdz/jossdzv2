@@ -20,7 +20,7 @@ interface Image {
 function shuffle(a: Image[]) {
   for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1))
-    ;[a[i], a[j]] = [a[j], a[i]]
+      ;[a[i], a[j]] = [a[j], a[i]]
   }
   return a
 }
@@ -61,12 +61,15 @@ function LandingInfo() {
       }
     }
   `)
+
+  console.log(bio);
+
   return (
     <InfoStyled>
       <FontAwesomeIcon icon={faGem} size="lg" />
       <BlockContentRender data={bio} />
       <hr />
-      <h2>Tecnologias</h2>
+      <h2>Tech stack</h2>
       <StackSlide>
         {shuffle(edges).map(
           (
@@ -79,8 +82,8 @@ function LandingInfo() {
             }: Image,
             i
           ) => (
-            <Image name={originalFilename} key={i} />
-          )
+              <Image name={originalFilename} key={i} />
+            )
         )}
       </StackSlide>
       <hr />

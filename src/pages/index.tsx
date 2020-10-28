@@ -1,18 +1,19 @@
-import React from "react"
-
+import React, { useEffect } from "react"
 import { useMapState } from "../hooks/state"
 import Hero from "../components/Hero"
 import LandingInfo from "../components/LandingInfo"
 import SEO from "../components/seo"
-import Footer from "../components/Footer"
 
 const IndexPage = () => {
-  const { setMapState } = useMapState()
+  const { setMapState, mapState: { showingMenu } } = useMapState()
+
+  useEffect(() => { if (showingMenu) setMapState({ type: 'CLOSEMENU' }) }, [])
+
   return (
     <>
       <SEO
-        description="Jossdz portafolio 2020"
-        lang="es"
+        description="Jossdz portfolio 2020"
+        lang="en"
         title="Jossdz | Jose Carlos Correa"
       />
       <Hero />

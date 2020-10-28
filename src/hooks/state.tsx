@@ -11,7 +11,7 @@ const initialMapContext: {
   setMapState: React.Dispatch<MapActions>
 } = {
   mapState: initialState,
-  setMapState: () => {},
+  setMapState: () => { },
 }
 
 export const MapContext = createContext(initialMapContext)
@@ -26,6 +26,9 @@ const reducer = (state: MapState, action: MapActions) => {
       return state.showingMenu
         ? { ...state, showingMenu: false }
         : { ...state, showingMenu: true }
+    case "CLOSEMENU":
+      return ({ ...state, showingMenu: false })
+
     default:
       return state
   }

@@ -29,7 +29,7 @@ const CardStyles = styled.article`
     width: 100%;
     height: 10%;
     background-color: ${props =>
-      props.theme.mode === `LIGHT` ? "var(--soft-dark)" : "var(--soft-white)"};
+    props.theme.mode === `LIGHT` ? "var(--soft-dark)" : "var(--soft-white)"};
     padding: 0 12px;
   }
   div > small {
@@ -87,14 +87,14 @@ interface Props {
 function Card({ title, description, place, date, slides }: Props) {
   return (
     <CardStyles>
-      <h2>{title.es}</h2>
+      <h2>{title.en}</h2>
       {place && date ? (
         <div>
           <small>{place.name}</small>
           <small>{date}</small>
         </div>
       ) : null}
-      <small>{description.es}</small>
+      <small>{description.en}</small>
       {slides && (
         <a href={slides} target="__blank">
           <button>Slides</button>

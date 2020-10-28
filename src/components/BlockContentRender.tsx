@@ -14,7 +14,7 @@ const serializers = {
 const BlockContentRender = ({ data }) => (
   <BlockContent
     serializers={serializers}
-    blocks={data.es}
+    blocks={data.en}
     imageOptions={{ w: 320, h: 240, fit: "max" }}
     projectId="wmkaj1hi"
     dataset="production"

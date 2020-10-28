@@ -41,7 +41,7 @@ const project = ({pageContext:{
         <StyledBlockC
           serializers={serializers}
           blocks={_rawBody.es}
-          imageOptions={{ w: 400, h: 240, fit: "max" }}
+          imageOptions={{ w: 1000, h: 680, fit: "max" }}
           projectId="wmkaj1hi"
           dataset="production"
           />

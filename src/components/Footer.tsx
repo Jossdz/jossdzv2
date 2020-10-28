@@ -4,7 +4,7 @@ import FooterStyled from "../styles/FooterStyled"
 function Footer() {
   return (
     <FooterStyled>
-      <h2>Contacto</h2>
+      <h2>Contact</h2>
       <nav>
         <a href="https://www.linkedin.com/in/jossdz/" target="__blank">
           LinkedIn

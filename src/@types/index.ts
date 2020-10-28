@@ -5,7 +5,7 @@ export interface MapState {
 }
 
 export interface MapActions {
-  type: "TOGGLETHEME" | "TOGGLEMENU" | ""
+  type: "TOGGLETHEME" | "TOGGLEMENU" | "CLOSEMENU" | ""
 }
 
 export interface MyGlobalProps {

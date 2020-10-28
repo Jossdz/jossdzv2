@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Title } from './talks'
 import { graphql, Link } from 'gatsby'
 import styled from 'styled-components'
 import { yellow } from '../styles/Theme'
+import { useMapState } from '../hooks/state'
 
 interface ProjectProps {
   data: {
@@ -44,6 +45,9 @@ const ProjectsList = styled.ul`
 `
 
 function projects({ data }: ProjectProps) {
+  const { setMapState, mapState: { showingMenu } } = useMapState()
+
+  useEffect(() => { if (showingMenu) setMapState({ type: 'CLOSEMENU' }) }, [])
 
   return (
     <div>
