@@ -16,6 +16,7 @@ html,  #___gatsby, #___gatsby> div  {
   height:100%;
 }
 body {
+  transition: all 0.8s ease;
   position: relative;
   min-height: 100%;
   background-color: ${props =>
