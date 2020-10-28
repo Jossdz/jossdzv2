@@ -45,7 +45,7 @@ const CardsGrid = styled.section`
   display: grid;
   grid-gap: 15px;
   padding: 15px;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
   @media screen and (min-width: 500px) {
     grid-gap: 30px;
     grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
